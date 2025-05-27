@@ -11,6 +11,12 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
@@ -32,6 +38,12 @@
       </ul>
     </section>
 
+    <!-- Embedded Dune Chart -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Live Dune Chart</h2>
+      <iframe src="https://dune.com/embeds/5114007/8434531/20cfb0ac-9cb4-42a1-bc6d-cca0d55f15c7"></iframe>
+    </section>
+
     <!-- Real-time Helius RPC Section -->
     <section>
       <h2 class="text-2xl font-semibold mb-4">Real‑Time Solana Slot</h2>
@@ -41,7 +53,6 @@
 
   <!-- Helius RPC Script -->
   <script>
-    // Replace with your actual Helius RPC key
     const HELIUS_RPC = 'https://rpc.helius.xyz/?api-key=YOUR_API_KEY';
     const slotEl = document.getElementById('slot-display');
 
