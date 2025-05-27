@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name – Dune Analyst</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Optional: smooth font rendering */
+    body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-xl mx-auto p-6">
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold mb-2">Your Name</h1>
+      <p class="text-lg text-gray-600">Dune Analyst | Web3 Data Enthusiast</p>
+    </header>
+
+    <!-- Links to best works -->
+    <section class="mb-8">
+      <h2 class="text-2xl font-semibold mb-4">Featured Analyses</h2>
+      <ul class="space-y-2">
+        <li><a href="YOUR_DUNE_QUERY_URL_1" target="_blank" class="text-blue-500 hover:underline">– Analysis Title 1</a></li>
+        <li><a href="YOUR_DUNE_QUERY_URL_2" target="_blank" class="text-blue-500 hover:underline">– Analysis Title 2</a></li>
+        <li><a href="YOUR_DUNE_QUERY_URL_3" target="_blank" class="text-blue-500 hover:underline">– Analysis Title 3</a></li>
+      </ul>
+    </section>
+
+    <!-- Real-time Helius RPC Section -->
+    <section>
+      <h2 class="text-2xl font-semibold mb-4">Real‑Time Solana Slot</h2>
+      <div id="slot-display" class="text-4xl font-mono text-center text-indigo-600">Loading...</div>
+    </section>
+  </div>
+
+  <!-- Helius RPC Script -->
+  <script>
+    // Replace with your Helius RPC endpoint and API key
+    const HELIUS_RPC = 'https://rpc.helius.xyz/?api-key=YOUR_API_KEY';
+    const slotEl = document.getElementById('slot-display');
+
+    async function fetchSlot() {
+      try {
+        const res = await fetch(HELIUS_RPC, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            jsonrpc: '2.0',
+            id: 1,
+            method: 'getSlot'
+          })
+        });
+        const { result } = await res.json();
+        slotEl.textContent = result;
+      } catch (err) {
+        slotEl.textContent = 'Error';
+        console.error('Helius RPC error', err);
+      }
+    }
+
+    // Initial fetch
+    fetchSlot();
+    // Refresh every 10 seconds
+    setInterval(fetchSlot, 10000);
+  </script>
+</body>
+</html>
