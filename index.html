@@ -7,21 +7,50 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #f3f4f6; /* Tailwind gray-100 */
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     iframe {
       width: 100%;
-      height: 100%;
+      height: 500px;
       border: none;
+      border-radius: 12px;
     }
   </style>
 </head>
-<body>
-  <!-- Full-screen Dune chart -->
-  <iframe src="https://dune.com/embeds/5114007/8434531/20cfb0ac-9cb4-42a1-bc6d-cca0d55f15c7" title="Dune Analytics Chart"></iframe>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <div class="max-w-4xl mx-auto p-6">
+    
+    <!-- Header -->
+    <header class="text-center mb-8">
+      <h1 class="text-4xl font-bold mb-2">Eekeyguy</h1>
+      <p class="text-xl text-gray-600">Dune Analyst | Web3 Data Enthusiast</p>
+    </header>
+
+    <!-- Links to best works -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Featured Analyses</h2>
+      <ul class="space-y-2 text-lg">
+        <li><a href="YOUR_DUNE_QUERY_URL_1" target="_blank" class="text-blue-500 hover:underline">– Analysis Title 1</a></li>
+        <li><a href="YOUR_DUNE_QUERY_URL_2" target="_blank" class="text-blue-500 hover:underline">– Analysis Title 2</a></li>
+        <li><a href="YOUR_DUNE_QUERY_URL_3" target="_blank" class="text-blue-500 hover:underline">– Analysis Title 3</a></li>
+      </ul>
+    </section>
+
+    <!-- Embedded Dune Chart -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-semibold mb-4">Live On-Chain Chart</h2>
+      <iframe 
+        src="https://dune.com/embeds/5114007/8434531/20cfb0ac-9cb4-42a1-bc6d-cca0d55f15c7" 
+        title="Dune Analytics Chart">
+      </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-gray-500 text-sm">
+      © 2025 Eekeyguy | Powered by GitHub Pages & Dune Analytics
+    </footer>
+  </div>
 </body>
 </html>
